@@ -1,0 +1,21 @@
+﻿<Window x:Class="ToDoApp_WPF.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp_WPF"
+        mc:Ignorable="d"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Title="Registration" Height="218.344" Width="226.183" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="62,138,0,0" VerticalAlignment="Top" Width="97" Background="#FF8568B9" BorderBrush="#FF714BB6" Click="Button_Click"/>
+        <TextBox Name="email" HorizontalAlignment="Left" Height="23" Margin="52,16,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="120" Foreground="#FFB4A1A1" GotFocus="TextBox_GotFocus"/>
+        <PasswordBox Name="password" HorizontalAlignment="Left" Height="23" Margin="52,56,0,0" Password="dsfssdfsd" VerticalAlignment="Top" Width="120" Foreground="#FFB4A1A1" GotFocus="TextBox_GotFocus_1"/>
+        <PasswordBox Name="confirmPassword"  HorizontalAlignment="Left" Height="23" Margin="52,97,0,0" Password="dsfssdfsd" VerticalAlignment="Top" Width="120" Foreground="#FFB4A1A1" GotFocus="TextBox_GotFocus_2"/>
+
+    </Grid>
+</Window>
