@@ -13,9 +13,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Name = "email" HorizontalAlignment="Left" Height="24" Margin="54,18,0,0" TextWrapping="Wrap" Text="1@mail.ru" VerticalAlignment="Top" Width="137" GotFocus="TextBox_GotFocus" Foreground="#FF999999"/>
+        <TextBox Name = "email" HorizontalAlignment="Left" Height="24" Margin="54,18,0,0" TextWrapping="Wrap" Text="your email" VerticalAlignment="Top" Width="137" GotFocus="TextBox_GotFocus" Foreground="#FF999999"/>
         <PasswordBox 
- Name ="password" HorizontalAlignment="Left" Height="30" Margin="54,62,0,0"  VerticalAlignment="Top" Width="137" Foreground="#FFA4A2A2" GotFocus="Password_GotFocus" Password="f9jRS692xJ"/>
+ Name ="password" HorizontalAlignment="Left" Height="30" Margin="54,62,0,0"  VerticalAlignment="Top" Width="137" Foreground="#FFA4A2A2" GotFocus="Password_GotFocus" Password="*******"/>
         <Button Name ="login" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="71,111,0,0" Click="login_Click" Background="#FFB99DEA"/>
         <Button Name = "signUp" Content="Sign Up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="71,148,0,0" Click="signUp_Click" Background="#FFBAA4E0" BorderBrush="#FF101013"/>
 

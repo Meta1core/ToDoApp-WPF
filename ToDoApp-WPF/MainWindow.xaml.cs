@@ -41,6 +41,7 @@ namespace ToDoApp_WPF
             InitializeComponent();
             ApiOperations.GetTasks();
             ApiOperations.GetDirectories();
+            MessageBox.Show("Delete tasks by double-clicking the left mouse button");
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
