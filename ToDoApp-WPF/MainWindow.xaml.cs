@@ -1,25 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.AspNet.SignalR.Client;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net.Http;
 using ToDoApp_WPF.Models.DTO;
-using ToDoApp_WPF.Models;
-using Newtonsoft.Json;
-using Caliburn.PresentationFramework;
 using ToDoApp_WPF.Operations;
-using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Client;
-
 namespace ToDoApp_WPF
 {
     /// <summary>
@@ -29,7 +14,7 @@ namespace ToDoApp_WPF
     {
         public System.Threading.Thread Thread { get; set; }
 
-        public string Host = "https://localhost:44370/";
+        public string Host = "http://10.190.101.110:8080/";
 
         public IHubProxy Proxy { get; set; }
         public HubConnection Connection { get; set; }
@@ -38,10 +23,13 @@ namespace ToDoApp_WPF
 
         public MainWindow()
         {
-            InitializeComponent();
-            ApiOperations.GetTasks();
-            ApiOperations.GetDirectories();
-            MessageBox.Show("Delete tasks by double-clicking the left mouse button");
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                InitializeComponent();
+                ApiOperations.GetTasks();
+                ApiOperations.GetDirectories();
+                MessageBox.Show("Delete tasks by double-clicking the left mouse button");
+            });
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -80,7 +68,7 @@ namespace ToDoApp_WPF
         }
         private void UpdateTask(int taskId)
         {
-            foreach (Task task in ListOfTasks.ItemsSource)
+            foreach (Models.Task task in ListOfTasks.ItemsSource)
             {
                 if (task.Id == taskId)
                 {
@@ -128,7 +116,7 @@ namespace ToDoApp_WPF
         {
             if (ListOfTasks.SelectedItem != null)
             {
-                Task task = (Task)ListOfTasks.SelectedItem;
+                Models.Task task = (Models.Task)ListOfTasks.SelectedItem;
                 if (task != null)
                 {
                     ApiOperations.DeleteTask(task.Id);

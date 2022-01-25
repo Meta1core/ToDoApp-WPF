@@ -22,7 +22,6 @@ namespace ToDoApp_WPF
     /// </summary>
     public partial class Registration : Window
     {
-        const string API_PATH = "https://localhost:44370/";
         public Registration()
         {
             InitializeComponent();
