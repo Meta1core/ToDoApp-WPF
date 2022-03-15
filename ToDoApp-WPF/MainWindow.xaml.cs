@@ -14,7 +14,7 @@ namespace ToDoApp_WPF
     {
         public System.Threading.Thread Thread { get; set; }
 
-        public string Host = "http://10.190.101.110:8080/";
+        public string Host = "https://localhost:44370/";
 
         public IHubProxy Proxy { get; set; }
         public HubConnection Connection { get; set; }
@@ -52,7 +52,7 @@ namespace ToDoApp_WPF
             Directory directory = (Directory)DirectoriesList.SelectedItem;
             if (directory != null)
             {
-                ApiOperations.GetTasksInDirectory(directory.Id);
+                Dispatcher.Invoke(new Action(() => ApiOperations.GetTasksInDirectory(directory.Id)));
             }
         }
 
@@ -89,7 +89,6 @@ namespace ToDoApp_WPF
                 {
                     Refresh();
                 });
-
                 Connection.Start();
 
                 while (Active)

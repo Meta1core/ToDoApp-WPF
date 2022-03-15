@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoApp_WPF.Models"
         mc:Ignorable="d"
-        Title="Tasks"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Tasks"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Width="609">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </Window.Resources>

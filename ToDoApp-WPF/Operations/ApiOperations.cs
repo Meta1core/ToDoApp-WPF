@@ -166,16 +166,13 @@ namespace ToDoApp_WPF.Operations
         public static async void GetTasksInDirectory(int directoryId)
         {
             MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            await System.Threading.Tasks.Task.Run(() =>
+            using (HttpClient client = new HttpClient())
             {
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Token);
-                    HttpResponseMessage response = client.GetAsync(API_PATH + "api/tasks/indirectory/" + directoryId).Result;
-                    string resultJSON = response.Content.ReadAsStringAsync().Result;
-                    mainWindow.ListOfTasks.ItemsSource = JsonConvert.DeserializeObject<List<Models.Task>>(resultJSON).ToList();
-                }
-            });
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + Token);
+                HttpResponseMessage response = client.GetAsync(API_PATH + "api/tasks/indirectory/" + directoryId).Result;
+                string resultJSON = response.Content.ReadAsStringAsync().Result;
+                mainWindow.ListOfTasks.ItemsSource = JsonConvert.DeserializeObject<List<Models.Task>>(resultJSON).ToList();
+            }
         }
     }
 }
